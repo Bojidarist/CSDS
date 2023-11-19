@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  hlds:
+    build: .
+    ports:
+      - "27015:27015/udp"
+    environment:
+      - "SERVER_NAME=My Great Server"
+      - SV_LAN=0
+      - MAX_PLAYERS=16
+    volumes:
+      - type: bind
+        source: "./entrypoints/cstrike_default_entrypoint.sh"
+        target: "/scripts/cstrike_default_entrypoint.sh"
