@@ -16,14 +16,13 @@ RUN mkdir /root/Steam && \
 COPY ./steamcmd_update_files/cstrike_default.txt /root/Steam/cstrike_default.txt
 RUN /root/.steam/steamcmd.sh +runscript /root/Steam/cstrike_default.txt
 
-# # Install metamod (thanks to https://github.com/archont94/counter-strike1.6)
-# install metamod
+# Install metamod (thanks to https://github.com/archont94/counter-strike1.6)
 RUN mkdir -p /hlds/cstrike/addons/metamod/dlls && \
     curl -sqL "http://prdownloads.sourceforge.net/metamod/metamod-1.20-linux.tar.gz" | tar zxf - -C /hlds/cstrike/addons/metamod/dlls && \
     touch /hlds/cstrike/addons/metamod/plugins.ini && \
     sed -i 's/gamedll_linux "dlls\/cs.so"/#gamedll_linux "dlls\/cs.so"\ngamedll_linux "addons\/metamod\/dlls\/metamod.so"/'  /hlds/cstrike/liblist.gam
 
-# install amxmodx using 1.10 to fix seg fault on client connect
+# Install amxmodx using 1.10 to fix seg fault on client connect
 RUN curl -sqL "https://www.amxmodx.org/amxxdrop/1.10/amxmodx-1.10.0-git5467-base-linux.tar.gz" | tar zxf - -C /hlds/cstrike && \
     curl -sqL "https://www.amxmodx.org/amxxdrop/1.10/amxmodx-1.10.0-git5467-cstrike-linux.tar.gz" | tar zxf - -C /hlds/cstrike && \
     echo "linux addons/amxmodx/dlls/amxmodx_mm_i386.so" >> /hlds/cstrike/addons/metamod/plugins.ini
