@@ -5,10 +5,13 @@ services:
     ports:
       - "27015:27015/udp"
     environment:
-      - "SERVER_NAME=My Great Server"
+      - SERVER_NAME=CSDS
+      - DEFAULT_MAP=de_dust2
       - SV_LAN=0
       - MAX_PLAYERS=16
-    volumes:
-      - type: bind
-        source: "./entrypoints/cstrike_default_entrypoint.sh"
-        target: "/scripts/cstrike_default_entrypoint.sh"
+      - GAMEMODE=classic
+      - SV_AIM=0
+      - PAUSABLE=0
+      - SV_MAXSPEED=320
+      - MP_TIMELIMIT=20
+      - SV_CHEATS=0

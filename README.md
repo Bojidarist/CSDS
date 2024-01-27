@@ -12,7 +12,7 @@ docker run -p 27015:27015/udp -p 27015:27015 -e SERVER_NAME=CSDS -e SV_LAN=0 -e 
 
 Using ```docker-compose```:
 
-1. Clone the repository
+1. Clone the repository.
 ```bash
 # HTTPS
 git clone https://github.com/Bojidarist/CSDS.git
