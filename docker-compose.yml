@@ -15,3 +15,4 @@ services:
       - SV_MAXSPEED=320
       - MP_TIMELIMIT=20
       - SV_CHEATS=0
+      - REHLDS=1
