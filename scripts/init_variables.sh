@@ -8,5 +8,6 @@ export SV_MAXSPEED=${SV_MAXSPEED:=320}
 export MP_TIMELIMIT=${MP_TIMELIMIT:=20}
 export SV_CHEATS=${SV_CHEATS:=0}
 export GAMEMODE=${GAMEMODE:=classic}
+export REHLDS=${REHLDS:=1}
 
 touch /.init_variables_complete

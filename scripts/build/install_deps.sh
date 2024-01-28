@@ -1,9 +1,10 @@
-apt update && apt install -y software-properties-common
+export DEBIAN_FRONTEND=noninteractive
 
-add-apt-repository multiverse && \
+apt update && apt install -yq software-properties-common && \
+add-apt-repository -y multiverse && \
 dpkg --add-architecture i386 && \
 apt update && \ 
-apt install -y lib32gcc-s1 curl lib32stdc++6 vim && \
+apt install -yq lib32gcc-s1 lib32stdc++6 curl vim unzip && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/* && \
 touch /.install_deps_complete

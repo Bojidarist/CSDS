@@ -23,6 +23,10 @@ if [[ ! -e "/.setup_amxmodx_complete" ]]; then
     /scripts/build/setup_amxmodx.sh
 fi
 
+if [[ ! -e "/.setup_rehlds_complete" ]]; then
+    /scripts/build/setup_rehlds.sh
+fi
+
 if [[ ! -e "/.copy_server_config_complete" ]]; then
     /scripts/build/copy_server_config.sh
 fi
